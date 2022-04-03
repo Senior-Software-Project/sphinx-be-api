@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "sphinx-be-api",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "lodash": "^4.17.21"
   }
 }
