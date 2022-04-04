@@ -4,8 +4,10 @@
 
 import express from 'express'
 import bodyParser from 'body-parser'
+import mongoose from 'mongoose'
+mongoose.connect('mongodb://localhost/sphinx_stats')
 
-import userStats from './user-stats.js'
+import userStats from './user-stat-routes.js'
 
 const app = express()
 
