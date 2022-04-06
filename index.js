@@ -1,19 +1,18 @@
-/*
-import express from 'express'
+import express from 'express';
 
-const app = express()
+const app = express();
 
-const hostname = '127.0.0.1'
-const port = 3000
+const hostname = '127.0.0.1';
+const port = 3000;
 
 app.get('/', (req, res) => {
   // res.send('Hello World!');
-  res.json('hello: world')
-})
+  res.json('hello: world');
+});
 
 app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`)
-})
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
 
 /*
 import { createServer } from 'http';
@@ -29,3 +28,4 @@ const server = createServer((req, res) => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 */
+
