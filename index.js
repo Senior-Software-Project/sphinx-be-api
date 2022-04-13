@@ -1,5 +1,6 @@
-/* Code is based on material presented in Pluralsight course, "Play by Play: Building a Node Web API with Sam Artioli and John Papa" at:
-        https://app.pluralsight.com/library/courses/play-by-play-node-web-api-john-papa-sam-artioli/table-of-contents (subscription req'd)
+/* Code is based on material presented in Pluralsight course,
+   "Play by Play: Building a Node Web API with Sam Artioli and John Papa" at:
+   https://app.pluralsight.com/ (subscription req'd)
 */
 
 import express from 'express'
