@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const statSchema = mongoose.Schema({
     userId: Number,
@@ -7,4 +7,4 @@ const statSchema = mongoose.Schema({
     success: Boolean
 });
 
-export default mongoose.model('Stat', statSchema)
+export default mongoose.model('Stat', statSchema);
