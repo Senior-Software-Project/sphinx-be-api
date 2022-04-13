@@ -3,24 +3,24 @@
    https://app.pluralsight.com/ (subscription req'd)
 */
 
-import express from 'express'
-import bodyParser from 'body-parser'
-import mongoose from 'mongoose'
-mongoose.connect('mongodb://localhost/sphinx_stats')
+import express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+mongoose.connect('mongodb://localhost/sphinx_stats');
 
-import userStats from './user-stat-routes.js'
+import userStats from './user-stat-routes.js';
 
-const app = express()
+const app = express();
 
-const hostname = '127.0.0.1'
-const port = 3000
+const hostname = '127.0.0.1';
+const port = 3000;
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
-}))
+}));
 
-const stats = userStats(app)
+const stats = userStats(app);
 
 app.listen(port, hostname, () => {
 /*   userStatsRoutesLoaded = false
@@ -28,8 +28,8 @@ app.listen(port, hostname, () => {
     userStatsRoutesLoaded = true
   } */
   if (typeof stats === 'undefined') {
-    console.log(`Server running at http://${hostname}:${port}/, userStats routes loaded`)
+    console.log(`Server running at http://${hostname}:${port}/, userStats routes loaded`);
   } else {
-    console.log(`Server running at http://${hostname}:${port}/`)
+    console.log(`Server running at http://${hostname}:${port}/`);
   }
-})
+});
