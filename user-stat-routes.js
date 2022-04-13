@@ -19,16 +19,17 @@ export default function (app) {
 
   /* Read */
   app.get('/userStats', (req, res) => {
-    Stat.find((err, stats) => {
+    Stat.find({}, (err, stats) => {
       if(err) {
         res.json({ info: 'error finding stats', error: err })
+        return;
       }
       else {
-        res.json({ info: 'stats found successfully', data, stats })
+        res.json({ info: 'stats found successfully', data: stats })
+        return;
       }
 
     })
-    res.json(_userStats.toString())
   })
 
   app.get('/userStat/:id', (req, res) => {
@@ -37,7 +38,7 @@ export default function (app) {
         res.json({ info: 'error finding stat', error: err })
       }
       else if (stat) {
-        res.json({ info: 'stat found successfully', data, stat })
+        res.json({ info: 'stat found successfully', data: stat })
       } 
       else {
         res.json({ info: 'stat not found' })
