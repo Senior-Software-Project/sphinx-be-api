@@ -18,7 +18,8 @@ export default function(app) {
     });
   });
 
-  /* Read */
+  /* Reads */
+  /* gets all stat entries for all users */
   app.get('/userStats', (req, res) => {
     Stat.find({}, (err, stats) => {
       if (err) {
@@ -31,6 +32,7 @@ export default function(app) {
     });
   });
 
+  /* gets a particular stat entry based on the entry's object id (Stat._id) */
   app.get('/userStat/:id', (req, res) => {
     Stat.findById(req.params.id, (err, stat) => {
       if (err) {
@@ -40,6 +42,22 @@ export default function(app) {
       } else {
         res.json({info: 'stat not found'});
       }
+    });
+  });
+
+  /* gets all stat entries for a particular user, by their userId */
+  app.get('/userStats/:userId', (req, res) => {
+    Stat.find({
+        userId: req.params.userId
+      }, (err, stats) => {
+      if (err) {
+        res.json({info: 'error finding user\'s stats', error: err});
+      } else if (stats) {
+        res.json({info: 'users\'s stats found successfully', data: stats});
+      } else {
+        res.json({info: 'user\'s stats not found'});
+      }
+
     });
   });
 
