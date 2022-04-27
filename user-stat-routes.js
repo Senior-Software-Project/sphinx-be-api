@@ -48,8 +48,8 @@ export default function(app) {
   /* gets all stat entries for a particular user, by their userId */
   app.get('/userStats/:userId', (req, res) => {
     Stat.find({
-        userId: req.params.userId
-      }, (err, stats) => {
+      userId: req.params.userId,
+    }, (err, stats) => {
       if (err) {
         res.json({info: 'error finding user\'s stats', error: err});
       } else if (stats) {
@@ -57,7 +57,6 @@ export default function(app) {
       } else {
         res.json({info: 'user\'s stats not found'});
       }
-
     });
   });
 
