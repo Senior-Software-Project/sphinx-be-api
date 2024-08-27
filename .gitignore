@@ -1,3 +1,7 @@
+# expo and package-lock
+package-lock.json
+.expo/
+
 # Logs
 logs
 *.log
